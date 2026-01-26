@@ -9,19 +9,11 @@ export default function MerciRDV() {
     setShow(true);
 
     // Confettis (petit burst propre)
-    const duration = 1200;
-    const end = Date.now() + duration;
-
-    const tick = () => {
-      confetti({
-        particleCount: 40,
-        spread: 70,
-        origin: { y: 0.7 },
-      });
-      if (Date.now() < end) requestAnimationFrame(tick);
-    };
-
-    tick();
+   confetti({
+  particleCount: 20,
+  spread: 60,
+  origin: { y: 0.65 },
+});
   }, []);
 
   return (
