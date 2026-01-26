@@ -1,5 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MerciRDV from "./pages/MerciRDV";
 import { 
   CheckCircle, 
   Clock, 
@@ -668,7 +670,7 @@ const Footer = () => {
   );
 };
 
-const App: React.FC = () => {
+const HomePage: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
@@ -681,7 +683,7 @@ const App: React.FC = () => {
       <PricingTable />
       <FAQ />
       <Footer />
-      
+
       <style>{`
         @keyframes bounce-subtle {
           0%, 100% { transform: translateY(0); }
@@ -699,6 +701,17 @@ const App: React.FC = () => {
         }
       `}</style>
     </div>
+  );
+};
+
+const App: React.FC = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/merci-rdv" element={<MerciRDV />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
